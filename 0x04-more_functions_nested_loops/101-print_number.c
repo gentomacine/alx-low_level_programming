@@ -1,35 +1,71 @@
-#include "holberton.h"
+#include <stdio.h>
+#include "main.h"
 
 /**
- * print_number - prints an integer.
- * @n: input integer.
- * Return: no return.
- */
-void print_number(int n)
+ * exponent - x to the power of y
+ * @x: base number
+ * @y: exponent
+ * Description: calcuates x^y
+ * Return: x^y
+ *
+ **/
+
+int exponent(int x, int y)
 {
-	unsigned int m, d, count;
+	int power;
 
-	if (n < 0)
+	power = x;
+
+	if (x == 0)
+		return (0);
+	if (y == 0)
+		return (1);
+
+	while (y >= 2)
 	{
-		_putchar(45);
-		m = n * -1;
+		power  = power * x;
+		y--;
 	}
-	else
+	return (power);
+}
+
+/**
+ * print_number - print an int using only _putchar
+ * @number: int to be printed by function
+ *
+ * Return: nothing
+ **/
+
+void print_number(int number)
+{
+	int size, digit;
+	long counter, sign;
+
+	sign = 1;
+	digit = 0;
+	size = 1;
+	counter = number;
+
+	if (number < 0)
 	{
-		m = n;
+		_putchar('-');
+		sign = -1;
+		counter *= sign;
 	}
 
-	d = m;
-	count = 1;
-
-	while (d > 9)
+	for (; counter >= 10; size++)
 	{
-		d /= 10;
-		count *= 10;
+		counter = counter / 10;
 	}
 
-	for (; count >= 1; count /= 10)
+	counter = sign * (long)number;
+
+	while (size >= 2)
 	{
-		_putchar(((m / count) % 10) + 48);
+		digit = (counter / exponent(10, size - 1));
+		_putchar(digit + '0');
+		counter = counter % exponent(10, size - 1);
+		size--;
 	}
+	_putchar(counter % 10 + '0');
 }
