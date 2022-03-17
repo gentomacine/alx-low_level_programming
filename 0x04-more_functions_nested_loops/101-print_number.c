@@ -3,15 +3,14 @@
 
 /**
  * power - exponents
- * @base: base
- * @exp: exponent
+ * base: base
+ * exp: exponent
  * Return: result (int)
  */
 
 int power(int base, int exp)
 {
 	int i, num;
-
 	num = 1;
 	for (i = 0; i < exp; ++i)
 		num *= base;
@@ -21,7 +20,7 @@ int power(int base, int exp)
 
 /**
  * print_number - prints an integer
- * @n: number to print
+ * n: number to print
  * Return void
  */
 
