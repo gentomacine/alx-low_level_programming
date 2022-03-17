@@ -1,71 +1,68 @@
-#include <stdio.h>
+#include <math.h>
 #include "main.h"
 
 /**
- * exponent - x to the power of y
- * @x: base number
- * @y: exponent
- * Description: calcuates x^y
- * Return: x^y
- *
- **/
+ * power - exponents
+ * @base: base
+ * @exp: exponent
+ * Return: result (int)
+ */
 
-int exponent(int x, int y)
+int  power(int base, int exp)
 {
-	int power;
+	int i, num;
 
-	power = x;
+	num = 1;
+	for (i = 0; i < exp; ++i)
+		num *= base;
 
-	if (x == 0)
-		return (0);
-	if (y == 0)
-		return (1);
-
-	while (y >= 2)
-	{
-		power  = power * x;
-		y--;
-	}
-	return (power);
+	return (num);
 }
 
 /**
- * print_number - print an int using only _putchar
- * @number: int to be printed by function
- *
- * Return: nothing
- **/
+ * print_number - prints an integer
+ * @n: number to print
+ * Return void
+ */
 
-void print_number(int number)
+void print_number(int n)
 {
-	int size, digit;
-	long counter, sign;
+	int negative = 0;
+	int digit;
+	int divisor;
+	int begin = 0;
+	int place = 10;
 
-	sign = 1;
-	digit = 0;
-	size = 1;
-	counter = number;
-
-	if (number < 0)
+	if (n < 0)
 	{
-		_putchar('-');
-		sign = -1;
-		counter *= sign;
+		negative = 1;
+		n = n * -1;
 	}
-
-	for (; counter >= 10; size++)
+	while (place >= 0)
 	{
-		counter = counter / 10;
+		/*divisor = pow(10, place);*/
+		divisor = power(10, place);
+		digit = ((n / divisor) % 10);
+		if (digit == 0 && begin == 0)
+		{
+			place--;
+		}
+		else if (digit != 0 && begin == 0)
+		{
+			begin = 1;
+			if (negative == 1)
+				_putchar('-');
+			_putchar('0' + digit);
+			place--;
+		}
+		else
+		{
+			_putchar('0' + digit);
+			place--;
+		}
 	}
-
-	counter = sign * (long)number;
-
-	while (size >= 2)
+	if (digit == 0 && divisor == 1)
 	{
-		digit = (counter / exponent(10, size - 1));
-		_putchar(digit + '0');
-		counter = counter % exponent(10, size - 1);
-		size--;
+		_putchar(48);
 	}
-	_putchar(counter % 10 + '0');
 }
