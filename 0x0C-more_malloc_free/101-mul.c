@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -9,7 +9,6 @@
  *
  * Return: no return.
  */
-
 void _is_zero(char *argv[])
 {
 	int i, isn1 = 1, isn2 = 1;
@@ -26,14 +25,12 @@ void _is_zero(char *argv[])
 		{
 			isn2 = 0;
 			break;
-
 		}
 
 	if (isn1 == 1 || isn2 == 1)
 	{
 		printf("0\n");
 		exit(0);
-
 	}
 }
 
@@ -44,7 +41,6 @@ void _is_zero(char *argv[])
  *
  * Return: pointer of a char array.
  */
-
 char *_initialize_array(char *ar, int lar)
 {
 	int i = 0;
@@ -63,7 +59,6 @@ char *_initialize_array(char *ar, int lar)
  *
  * Return: length of the number.
  */
-
 int _checknum(char *argv[], int n)
 {
 	int ln;
@@ -75,7 +70,7 @@ int _checknum(char *argv[], int n)
 			exit(98);
 		}
 
-	return (ln);	
+	return (ln);
 }
 
 /**
@@ -86,7 +81,6 @@ int _checknum(char *argv[], int n)
  *
  * Return: 0 - success.
  */
-
 int main(int argc, char *argv[])
 {
 	int ln1, ln2, lnout, add, addl, i, j, k, ca;
@@ -117,7 +111,6 @@ int main(int argc, char *argv[])
 		{
 			if (nout[0] != '0')
 				break;
-				
 			lnout--;
 			free(nout), nout = malloc(lnout + 1), nout = _initialize_array(nout, lnout);
 			k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
@@ -130,5 +123,4 @@ int main(int argc, char *argv[])
 	}
 	printf("%s\n", nout);
 	return (0);
-
 }
