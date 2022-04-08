@@ -18,6 +18,7 @@ void _is_zero(char *argv[])
 		{
 			isn1 = 0;
 			break;
+
 		}
 
 	for (i = 0; argv[2][i]; i++)
@@ -25,6 +26,7 @@ void _is_zero(char *argv[])
 		{
 			isn2 = 0;
 			break;
+
 		}
 
 	if (isn1 == 1 || isn2 == 1)
@@ -73,7 +75,7 @@ int _checknum(char *argv[], int n)
 		}
 
 	return (ln);
-
+	
 }
 
 /**
