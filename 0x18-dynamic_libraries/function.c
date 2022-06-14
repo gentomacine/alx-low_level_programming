@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+#include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+>>>>>>> 151681b80b24ef40a76966a521911bf957dfc900
 /**
  * op_add - adds two numbers.
  * @a: first number.
