@@ -1,9 +1,9 @@
-C - Search Algorithms
-This was my Holberton School project on search algorithms. I implemented various types of search algorithms and stated the corresponding space/time complexities for each.
+## C - Search Algorithms
+This was my Alx School project on search algorithms. I implemented various types of search algorithms and stated the corresponding space/time complexities for each.
 
-Tests âœ”ï¸
+## Tests âœ”ï¸
 tests: Folder of test files for all tasks. Provided by Holberton School.
-Helper Files í¹Œ
+Helper Files ï¿½ï¿½ï¿½
 listint: Folder of helper files for task 12, singly linked list jump search.
 
 create_list.c: C function that creates a listint_t singly linked list.
@@ -14,7 +14,7 @@ skiplist: Folder of helper files for task 13, singly skipped list jump search.
 create_skiplist.c: C function that creates a skiplist_t singly skipped list.
 free_skiplist.c: C function that frees a skiplist_t singly skipped list.
 print_skiplist.c: C function that prints the contents of a skiplist_t singly skipped list.
-Header File í³
+Header File ï¿½ï¿½ï¿½
 search_algos.h: Header file containing definitions and prototypes for all types and functions written for the project.
 Data Structures
 
@@ -55,14 +55,14 @@ typedef struct skiplist_s
 } skiplist_t;
 Function Prototypes
 
-File	Prototype
+### File	Prototype
 0-linear.c	int linear_search(int *array, size_t size, int value);
 1-binary.c	int binary_search(int *array, size_t size, int value);
 100-jump.c	int jump_search(int *array, size_t size, int value);
 102-interpolation.c	int interpolation_search(int *array, size_t size, int value);
 103-exponential.c	int exponential_search(int *array, size_t size, int value);
 104-advanced_binary.c	int advanced_binary(int *array, size_t size, int value);
-Tasks í³ƒ
+Tasks ï¿½ï¿½ï¿½
 0. Linear search
 
 0-linear.c: C function that searches for a value in an array of integers using linear search.
